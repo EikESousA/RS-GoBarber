@@ -17,7 +17,6 @@ describe('ResetPassword', () => {
 		fakeUsersRepository = new FakeUsersRepository();
 		fakeUserTokensRepository = new FakeUserTokensRepository();
 		fakeHashProvider = new FakeHashProvider();
-
 		resetPasswordService = new ResetPasswordService(
 			fakeUsersRepository,
 			fakeUserTokensRepository,
@@ -61,9 +60,9 @@ describe('ResetPassword', () => {
 			'non-existing-user',
 		);
 
-		expect(
+		await expect(
 			resetPasswordService.execute({
-				token: 'non-existing-token',
+				token,
 				password: '123456',
 			}),
 		).rejects.toBeInstanceOf(AppError);

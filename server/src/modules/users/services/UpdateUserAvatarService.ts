@@ -1,9 +1,5 @@
-import path from 'path';
-import fs from 'fs';
 import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
-
-import uploadConfig from '@config/upload';
 
 import AppError from '@shared/errors/AppError';
 
@@ -23,7 +19,7 @@ class UpdateUserAvatarService {
 		@inject('UsersRepository')
 		private usersRepository: IUsersRepository,
 		@inject('StorageProvider')
-		private StorageProvider: IStorageProvider,
+		private storageProvider: IStorageProvider,
 	) {}
 
 	public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
@@ -34,10 +30,10 @@ class UpdateUserAvatarService {
 		}
 
 		if (user.avatar) {
-			await this.StorageProvider.deleteFile(user.avatar);
+			await this.storageProvider.deleteFile(user.avatar);
 		}
 
-		const filename = await this.StorageProvider.saveFile(avatarFilename);
+		const filename = await this.storageProvider.saveFile(avatarFilename);
 
 		user.avatar = filename;
 
