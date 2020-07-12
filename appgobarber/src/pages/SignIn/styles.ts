@@ -6,7 +6,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
+  padding: 0 30px ${Platform.OS === 'ios' ? 150 : 40}px;
 `;
 
 export const Title = styled.Text`
@@ -40,7 +40,6 @@ export const CreateAccountButton = styled.TouchableOpacity`
   align-items: center;
   flex-direction: row;
 `;
-
 export const CreateAccountButtonText = styled.Text`
   color: #ff9000;
   font-size: 18px;

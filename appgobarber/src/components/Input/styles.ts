@@ -32,13 +32,13 @@ export const Container = styled.View<ContainerProps>`
     `}
 `;
 
-export const Icon = styled(FeatherIcon)`
-  margin-right: 16px;
-`;
-
 export const TextInput = styled.TextInput`
   flex: 1;
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: 'RobotoSlab-Medium';
+`;
+
+export const Icon = styled(FeatherIcon)`
+  margin-right: 16px;
 `;

@@ -1,19 +1,14 @@
 {
   "env": {
-    "browser": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
+    "__DEV__": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -23,33 +18,31 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks", "prettier"],
   "rules": {
-    "react/jsx-props-no-spreading": "off",
     "prettier/prettier": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "import/prefer-default-export": "off",
-    "no-unused-expressions": "off",
-    "@typescript-eslint/explicit-function-return-type": [
+    "react/jsx-filename-extension": [
       "error",
-      {
-        "allowExpressions": true
-      }
+      { "extensions": [".js", ".jsx"] }
     ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ]
+    "import/prefer-default-export": "off",
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "react/jsx-one-expression-per-line": "off",
+    "global-require": "off",
+    "react-native/no-raw-text": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "camelcase": "off",
+    "import/no-duplicates": "off",
+    "no-console": ["error", { "allow": ["tron"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "import/resolver": {
-      "typescript": {}
+      "babel-plugin-root-import": {
+        "rootPathSuffix": "src"
+      }
     }
   }
 }
