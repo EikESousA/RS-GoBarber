@@ -33,7 +33,7 @@ describe('SendForgotPasswordEmail', () => {
 			password: '123456',
 		});
 
-		const user = await sendForgotPasswordEmailService.execute({
+		await sendForgotPasswordEmailService.execute({
 			email: 'johndoe@example.com',
 		});
 

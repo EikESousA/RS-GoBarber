@@ -33,7 +33,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
 			appointment =>
 				appointment.provider_id === provider_id &&
 				getMonth(appointment.date) + 1 === month &&
-				getYear(appointment.date) == year,
+				getYear(appointment.date) === year,
 		);
 
 		return filterAppointments;
@@ -48,9 +48,9 @@ class AppointmentsRepository implements IAppointmentsRepository {
 		const filterAppointments = this.appointments.filter(
 			appointment =>
 				appointment.provider_id === provider_id &&
-				getDate(appointment.date) == day &&
+				getDate(appointment.date) === day &&
 				getMonth(appointment.date) + 1 === month &&
-				getYear(appointment.date) == year,
+				getYear(appointment.date) === year,
 		);
 
 		return filterAppointments;

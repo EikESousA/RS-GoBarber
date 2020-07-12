@@ -35,7 +35,7 @@ describe('CreateUser', () => {
 	});
 
 	it('should not be able to create a new user with same email from another!', async () => {
-		const user = await createUserService.execute({
+		await createUserService.execute({
 			name: 'John Doe',
 			email: 'johndoe@example.com',
 			password: '123456',
