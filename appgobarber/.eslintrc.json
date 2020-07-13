@@ -1,44 +1,59 @@
 {
   "env": {
-    "es6": true,
-    "browser": true
+      "es6": true,
+      "browser": true,
+      "jest": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+      "plugin:react/recommended",
+      "airbnb",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
   ],
   "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "plugins": [
+      "react",
+      "react-hooks",
+      "@typescript-eslint",
+      "prettier"
+  ],
   "rules": {
-    "prettier/prettier": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "import/prefer-default-export": "off",
-    "react/jsx-props-no-spreading": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "react/prop-types": "off",
-    "no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-vars":["warn",{"args":"none","ignoreRestSiblings":true}],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      { "ts": "never", "tsx": "never" }
-    ]
+      "prettier/prettier": "error",
+      "react/jsx-one-expression-per-line": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "react/prop-types": "off",
+      "no-unused-expressions": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx"]}],
+      "import/prefer-default-export": "off",
+      "import/no-duplicates": "off",
+      "@typescript-eslint/camelcase": "off",
+      "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+              "ts": "never",
+              "tsx": "never"
+          }
+      ]
   },
-  "settings": { "import/resolver": { "typescript": {} } }
+  "settings": {
+      "import/resolver": {
+          "typescript": {}
+      }
+  }
 }
