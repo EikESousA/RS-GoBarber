@@ -33,8 +33,6 @@ const SignUp: React.FC = () => {
   const passwordRef = useRef<TextInput>(null);
   const emailRef = useRef<TextInput>(null);
 
-  console.log(emailRef);
-
   const handleSignUp = useCallback(
     async (data: SignUpFormData) => {
       try {
