@@ -106,7 +106,7 @@ const Dashboard: React.FC = () => {
         });
         setAppointments(appointmentsFormatted);
       });
-  }, [selectedDate]);
+  }, [currentMonth, selectedDate]);
 
   const selectedDateAsText = useMemo(() => {
     return format(selectedDate, "'Dia' dd 'de' MMMM", {
