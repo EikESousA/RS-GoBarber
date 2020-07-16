@@ -66,7 +66,7 @@ const Dashboard: React.FC = () => {
   const disabledDays = useMemo(() => {
     const dates = monthAvailability
       .filter(monthDay => monthDay.available === false)
-      .map(monthDay => {
+      .map(monthDay: Date => {
         const year = currentMonth.getFullYear();
         const month = currentMonth.getMonth();
         return new Date(year, month, monthDay.day);
